@@ -5,6 +5,10 @@ describe Twitter::Identity do
     it 'raises an IndexError when id is not specified' do
       expect { Twitter::Identity.new }.to raise_error(IndexError)
     end
+
+    it 'raises an argument error when args are nil' do
+      expect { Twitter::Identity.new(nil) }.to raise_error(ArgumentError)
+    end
   end
 
   describe '#==' do
